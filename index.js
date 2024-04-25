@@ -5,12 +5,12 @@ require('dotenv').config()
 
 
 const PORT = process.env.PORT || 4000
-
+const routes = require('./routes/routes')
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-app.get('/', (req, res) => { res.send('Enciclopedia Zelda') })
+app.use('/', routes)
 
 dbConnection()
 
